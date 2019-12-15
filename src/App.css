@@ -7,3 +7,8 @@ a {
   text-decoration: none;
   color: black;
 }
+
+/* reference: https://www.w3schools.com/css/css3_box-sizing.asp */
+* {
+  box-sizing: border-box;
+}
