@@ -21,7 +21,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   //  we don't need to check if 'users' collection exist because if it doesn't it'll
   //  also be created at the same time
-  if (!snapShot.exits) {
+  if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
