@@ -13,7 +13,6 @@ import {
   LogoContainer,
   OptionsContainer,
   OptionLink,
-  OptionDiv,
 } from './header.styles';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
@@ -28,7 +27,9 @@ const Header = ({ currentUser, hidden }) => (
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/">CONTACT</OptionLink>
       {currentUser ? (
-        <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+        <OptionLink as="div" onClick={() => auth.signOut()}>
+          SIGN OUT
+        </OptionLink>
       ) : (
         <OptionLink to="/signin">SIGNIN</OptionLink>
       )}
