@@ -5,13 +5,12 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import CartIcon from '../cart-icon/cart-icon.component';
+import { default as CartIcon } from '../cart-icon/cart-icon.container';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { auth } from '../../firebase/firebase.utils';
 import './header.styles.scss';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 const Header = ({ currentUser, hidden }) => (
   <div className="header">
@@ -43,7 +42,6 @@ const Header = ({ currentUser, hidden }) => (
 // the state here is the root-reducer
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden
 });
 
 // connect is a higher-order component that lets us modify our component
