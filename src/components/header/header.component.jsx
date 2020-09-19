@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { default as CartIcon } from '../cart-icon/cart-icon.container';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { default as CartDropdown } from '../cart-dropdown/cart-dropdown.container';
 import { auth } from '../../firebase/firebase.utils';
 import './header.styles.scss';
 
