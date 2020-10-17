@@ -1,15 +1,8 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import { gql } from 'apollo-boost';
 
 import Header from './header.component';
-
-// same as the definition in resolvers.js
-const GET_CART_HIDDEN = gql`
-  {
-    cartHidden @client
-  }
-`;
+import { GET_CART_HIDDEN } from "../../graphql/resolvers";
 
 const HeaderContainer = () => (
   <Query query={GET_CART_HIDDEN}>

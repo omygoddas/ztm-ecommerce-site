@@ -30,8 +30,19 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
   );
 };
 
+export const clearItemsFromCart = (cartItems, cartItemsToRemove) => {
+  return cartItems.filter((cartItem) => cartItem.id !== cartItemsToRemove.id);
+};
+
 export const getCartItemCount = (cartItems) =>
   cartItems.reduce(
     (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity,
+    0
+  );
+
+export const getCartTotal = (cartItems) =>
+  cartItems.reduce(
+    (accumulatedCost, cartItem) =>
+      accumulatedCost + cartItem.quantity * cartItem.price,
     0
   );

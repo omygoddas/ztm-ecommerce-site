@@ -1,22 +1,9 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
 import { flowRight } from 'lodash';
 
 import CartIcon from './cart-icon.component';
-
-// this is the function that changes cartHidden property
-const TOGGLE_CART_HIDDEN = gql`
-  mutation ToggleCartHidden {
-    toggleCartHidden @client
-  }
-`;
-
-const GET_ITEM_COUNT = gql`
-  {
-    itemCount @client
-  }
-`;
+import { GET_ITEM_COUNT, TOGGLE_CART_HIDDEN } from '../../graphql/resolvers';
 
 const CartIconContainer = ({ data: { itemCount }, toggleCartHidden }) => (
   <CartIcon toggleCartHidden={toggleCartHidden} itemCount={itemCount} />

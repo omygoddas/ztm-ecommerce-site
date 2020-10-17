@@ -1,23 +1,9 @@
 import React from 'react';
 import Spinner from '../../components/spinner/spinner.component';
-import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import CollectionPage from './collection.component';
 
-const GET_COLLECTION_BY_TITLE = gql`
-  query getCollectionsByTitle($title: String!) {
-    getCollectionsByTitle(title: $title) {
-      id
-      title
-      items {
-        id
-        name
-        price
-        imageUrl
-      }
-    }
-  }
-`;
+import CollectionPage from './collection.component';
+import { GET_COLLECTION_BY_TITLE } from "../../graphql/resolvers";
 
 const CollectionsPageContainer = ({ match }) => (
   <Query
